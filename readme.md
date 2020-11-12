@@ -1,10 +1,29 @@
-When calling API request :
-- Always check if token is validate by https://id.twitch.tv/oauth2/validate with "OAuth <REACT_APP_APP_ACCESS_TOKEN>" in Authorization header. If result client_id is the same than <REACT_APP_CLIENT_ID>, you can do your request, else, if your token is expired, you have to validate it again by doing a POST request to the endpoint "https://id.twitch.tv/oauth2/authorize" with 
-{
-  "client_id": "<REACT_APP_CLIENT_ID>",
-  "client_secret": "<REACT_APP_APP_ACCESS_TOKEN>",
-  "grant_type": "client_credentials"
-}
-this json in datas.
+Clone down this repository. You will need node and npm installed globally on your machine.
 
-- When validation is passed, you have to set "Bearer <REACT_APP_APP_ACCESS_TOKEN>" in Authorization header. Now it should work properly :).
+Installation:
+
+yarn install
+
+To Run Test Suite:
+
+yarn test
+
+To Start Server:
+
+yarn start
+
+If you got this problem in browser console : Failed to execute 'postMessage' on 'DOMWindow', you have to put your localhost to https. To do so, follow the instructions below :
+
+1. In project root :
+```openssl req -x509 -newkey rsa:2048 -keyout keytmp.pem -out cert.pem -days 365```
+
+2. In project root :
+```openssl rsa -in keytmp.pem -out key.pem```
+
+3. In package.json, change start lign to this :
+```
+...
+"start": "export HTTPS=true&&SSL_CRT_FILE=cert.pem&&SSL_KEY_FILE=key.pem react-scripts start"
+...```
+
+4. When yarn start is launched, go to your localhost as https, click on advenced 
