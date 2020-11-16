@@ -4,7 +4,7 @@ import './fa-icon.scss';
 
 const FaIcon = (props) => {
   return (
-    <FontAwesomeIcon icon={props.icon} className={props.className}/>
+    <FontAwesomeIcon icon={props.icon} className={props.className} onClick={props.onClick}/>
   )
 }
 

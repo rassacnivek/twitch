@@ -14,19 +14,19 @@
     &__left {
       &-item {
         &.twitch {
-          margin-left: 10px;
+          margin-left: 2vw;
           font-size: 31px;
           color: #9147ff;
         }
         &.discover {
           font-size: 24px;
-          margin-left: 20px;
+          margin-left: 4.5vw;
         }
       }
     }
     &__right {
       &-item {
-        margin-right: 20px;
+        margin-right: 4.5vw;
         &.button {
           width: 135px;
           background-color: #9147ff;
@@ -37,7 +37,7 @@
           font-weight: 700;
         }
         &.search,
-        &.dots {
+        &.sign-out {
           font-size: 18px;
         }
       }
