@@ -14,7 +14,14 @@ const StyledLoginForm = styled.div`
   padding: 11vh 13vw;
 `
 const Title = styled.div`
-  font-size: 20px;
+  font-size: 16px;
+  @media (min-width: 344px){
+    font-size: 18px;
+  }
+
+  @media (min-width: 380px){
+    font-size: 20px;
+  }
 `
 
 const LoginForm = () => {
