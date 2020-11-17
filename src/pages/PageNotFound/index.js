@@ -7,7 +7,7 @@ const PageNotFound = () => {
   return (
     <div className="error">
       <div className="error__img">
-        <img src={img} alt="404"/>
+        <img src={img} alt="404" />
       </div>
       <div className="error__text">
         <div>
@@ -16,7 +16,7 @@ const PageNotFound = () => {
         <div>
           you were looking for..
         </div>
-      </div >
+      </div>
       <div className="error__button">
         <Link className="error__button-link" to="/">Let's go Home</Link>
       </div>
