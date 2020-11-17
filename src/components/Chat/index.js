@@ -1,40 +1,40 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import FaIcon from '../FaIcon';
-import { faPaperPlane } from '@fortawesome/free-regular-svg-icons';
-import { setUsername, changeInput, sendMessage } from '../../actions/chat'
+import { setUsername, changeInput } from '../../actions/chat'
 import './chat.scss';
+import styled from 'styled-components';
+import Message from '../Message';
+import SendInput from '../SendInput';
 
 
 const Chat = () => {
   const usernameState = useSelector(state => state.chat.username)
-  const messageTextState = useSelector(state => state.chat.messageText)
   const chatState = useSelector(state => state.chat.chat)
   const isChatVisibleState = useSelector(state => state.chat.isChatVisible)
   const dispatch = useDispatch()
+
+  const Chat = styled.div`
+    height: 54vh;
+  `
+
+  const ChatBox = styled.div`
+    height: 42.8vh;
+    padding: 3vh 3vw;
+  `
   return (
     <>
       {
         isChatVisibleState ? (
-          <div className="chat">
-            <div className="chat__box">
+          <Chat>
+            <ChatBox>
               {
                 chatState.map(
-                  (message, i) =>
-                    <div className="chat__box-message" key={i}>
-                      <div className="username">{message.username}</div>
-                      <div className="message">{message.message}</div>
-                    </div>
+                  (message, i) => <Message message={message} key={i}/>
                 )
               }
-            </div>
-            <div className="chat__input">
-              <input className="input" type="text" name="messageText" placeholder="Send a message" value={messageTextState} onChange={(e) => dispatch(changeInput(e))} />
-              <button className="button" onClick={() => dispatch(sendMessage())}>
-                <FaIcon className="paper-plain" icon={faPaperPlane} />
-              </button>
-            </div>
-          </div>
+            </ChatBox>
+            <SendInput/>
+          </Chat>
         ) : (
             <div className="login__form">
               <div className="login__form-title">Please, register your username !</div>

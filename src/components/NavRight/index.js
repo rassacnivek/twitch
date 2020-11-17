@@ -14,7 +14,7 @@ const NavRight = () => {
   `
   return (
     <Div>
-      <Button text="Ouvrir dans l'appli" />
+      <Button text="Ouvrir dans l'appli" className="header__button" />
       <FaIcon icon={faSearch} className="nav__right-item search" />
       <FaIcon icon={faSignOutAlt} className="nav__right-item sign-out" onClick={() => dispatch(deleteUsername())} />
     </Div>

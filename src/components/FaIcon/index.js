@@ -23,6 +23,11 @@ const FaIcon = (props) => {
     &.sign-out {
       font-size: 18px;
     }
+
+    &.paper-plane{
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.5);
+    }
   `
   return (
     <FaIcon icon={props.icon} className={props.className} onClick={props.onClick} />
