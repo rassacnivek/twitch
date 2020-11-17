@@ -6,18 +6,18 @@ import FaIcon from '../FaIcon';
 import { faPaperPlane } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button';
 
+const ChatInput = styled.input`
+  padding: 0 2vw;
+  height: 5vh;
+  width: 86.7vw;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 0.1vw solid rgba(0, 0, 0, 0.2);
+  border-right: none;
+`
+
 const SendInput = () => {
   const messageTextState = useSelector(state => state.chat.messageText)
   const dispatch = useDispatch()
-
-  const ChatInput = styled.input`
-    padding: 0 2vw;
-    height: 5vh;
-    width: 86.7vw;
-    background-color: rgba(0, 0, 0, 0.1);
-    border: 0.1vw solid rgba(0, 0, 0, 0.2);
-    border-right: none;
-  `
   return (
     <div>
       <ChatInput className="input" type="text" name="messageText" placeholder="Send a message" value={messageTextState} onChange={(e) => dispatch(changeInput(e))} />
