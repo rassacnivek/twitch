@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Twitch PWA",
+  "name": "Twitch Progressive WebApp",
   "icons": [
     {
       "src": "favicon.ico",
@@ -11,6 +11,11 @@
       "src": "logo192.png",
       "type": "image/png",
       "sizes": "192x192"
+    },
+    {
+      "src": "logo320.png",
+      "type": "image/png",
+      "sizes": "320x320"
     },
     {
       "src": "logo512.png",
